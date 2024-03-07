@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class QuestionsSummary extends StatelessWidget {
   const QuestionsSummary(this.summaryData, {super.key});
@@ -9,7 +11,7 @@ class QuestionsSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     const Color correctBackground = Color.fromARGB(255, 150, 198, 241);
     const Color wrongBackground = Color.fromARGB(255, 249, 133, 241);
-    Color Background, fontColor;
+    Color Background;
     const Color correctFontColor = Color.fromARGB(255, 181, 254, 246);
     const Color wrongFontColor = Color.fromARGB(255, 202, 171, 252);
     return SizedBox(
@@ -20,10 +22,8 @@ class QuestionsSummary extends StatelessWidget {
             (data) {
               if (data['user_answer'] == data['correct_answer']) {
                 Background = correctBackground;
-                fontColor = correctFontColor;
               } else {
                 Background = wrongBackground;
-                fontColor = wrongFontColor;
               }
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -56,13 +56,14 @@ class QuestionsSummary extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          Text(data['correct_answer'] as String),
                           Text(
                             data['user_answer'] as String,
                             style: TextStyle(
-                              color: fontColor,
+                              color: wrongFontColor,
                             ),
                           ),
+                          Text(data['correct_answer'] as String,
+                              style: TextStyle(color: correctFontColor)),
                         ],
                       ),
                     ),

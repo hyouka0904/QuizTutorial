@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:flutter_app/data/questions.dart';
 import 'package:flutter_app/questions_summary.dart';
 
@@ -44,7 +46,7 @@ class ResultsScreen extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(40),
         child: DefaultTextStyle(
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.white)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
