@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_app/data/questions.dart';
 import 'package:flutter_app/questions_summary.dart';
@@ -50,8 +51,8 @@ class ResultsScreen extends StatelessWidget {
               TextButton.icon(
                 onPressed: _onRestart,
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.white,
-                ),
+                    foregroundColor: Colors.white,
+                    textStyle: const TextStyle(fontSize: 28)),
                 icon: const Icon(Icons.refresh),
                 label: const Text('Restart Quiz!'),
               ),
@@ -59,8 +60,8 @@ class ResultsScreen extends StatelessWidget {
                 height: 30,
               ),
               Text(
-                'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
-              ),
+                  'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+                  style: TextStyle(fontSize: 28)),
               const SizedBox(
                 height: 30,
               ),
