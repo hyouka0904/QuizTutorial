@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../functions.dart';
+import 'package:flutter_app/flutter_function/functions.dart';
 
 class QuestionsSummary extends StatelessWidget {
   const QuestionsSummary(this.summaryData, {super.key});
@@ -55,14 +55,18 @@ class QuestionsSummary extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          Text(
-                            data['user_answer'] as String,
-                            style: TextStyle(
-                              color: wrongFontColor,
-                            ),
-                          ),
-                          Text(data['correct_answer'] as String,
-                              style: TextStyle(color: correctFontColor)),
+                          wrapTextWithTooltip(
+                              Text(
+                                data['user_answer'] as String,
+                                style: TextStyle(
+                                  color: wrongFontColor,
+                                ),
+                              ),
+                              'user_answer'),
+                          wrapTextWithTooltip(
+                              Text(data['correct_answer'] as String,
+                                  style: TextStyle(color: correctFontColor)),
+                              'correct_answer')
                         ],
                       ),
                     ),
