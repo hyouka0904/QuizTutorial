@@ -33,7 +33,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
     final currentQuestion = questions[_currentQuestionIndex];
-
+    TextStyle questionTextStyle = GoogleFonts.lato(
+      color: const Color.fromARGB(255, 201, 153, 251),
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+    );
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -42,14 +46,16 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              currentQuestion.text,
-              style: GoogleFonts.lato(
-                color: const Color.fromARGB(255, 201, 153, 251),
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+            Tooltip(
+              message: 'question',
+              preferBelow: false,
               textAlign: TextAlign.center,
+              textStyle: questionTextStyle,
+              child: Text(
+                currentQuestion.text,
+                style: questionTextStyle,
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 30),
             ...currentQuestion.shuffledAnswers.map((answer) {

@@ -59,9 +59,10 @@ class _QuizState extends State<Quiz> {
 
     return MaterialApp(
       theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-      ),
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+          tooltipTheme: const TooltipThemeData(
+              decoration: BoxDecoration(color: Colors.white))),
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(

@@ -31,7 +31,7 @@ class QuestionsSummary extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Background),
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Text(
                         ((data['question_index'] as int) + 1).toString(),
                         style: const TextStyle(
@@ -41,14 +41,14 @@ class QuestionsSummary extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 8.0),
+                    const SizedBox(width: 8.0),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             data['question'] as String,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 24,
                             ),
                           ),
@@ -58,14 +58,15 @@ class QuestionsSummary extends StatelessWidget {
                           wrapTextWithTooltip(
                               Text(
                                 data['user_answer'] as String,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: wrongFontColor,
                                 ),
                               ),
                               'user_answer'),
                           wrapTextWithTooltip(
                               Text(data['correct_answer'] as String,
-                                  style: TextStyle(color: correctFontColor)),
+                                  style:
+                                      const TextStyle(color: correctFontColor)),
                               'correct_answer')
                         ],
                       ),
